@@ -8,4 +8,11 @@ export const Config = {
     server: '10.0.4.1',
     path: '/Kubernetes'
   },
+  certManager: {
+    issuer: 'letsencrypt-prod',
+    issuerPrivateKey: 'letsencrypt-private-key-prod',
+    staging: 'letsencrypt-staging',
+    stagingPrivateKey: 'letsencrypt-private-key-staging',
+    email: 'catrielmuller@gmail.com'
+  }
 }
