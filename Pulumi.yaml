@@ -1,3 +1,4 @@
 name: home-k8s
 runtime: nodejs
 description: Home Kubernetes
+main: src/

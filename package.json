@@ -1,11 +1,24 @@
 {
-    "name": "home-k8s",
-    "devDependencies": {
-        "@types/node": "^10.0.0"
-    },
-    "dependencies": {
-        "@pulumi/pulumi": "^3.0.0",
-        "@pulumi/kubernetes": "^3.0.0",
-        "@pulumi/kubernetesx": "^0.1.5"
-    }
+  "name": "home-k8s",
+  "scripts": {
+    "lint": "eslint src/**/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.0"
+  },
+  "dependencies": {
+    "@pulumi/keycloak": "^4.5.0",
+    "@pulumi/kubernetes": "^3.0.0",
+    "@pulumi/kubernetesx": "^0.1.5",
+    "@pulumi/postgresql": "^3.2.0",
+    "@pulumi/pulumi": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
+  }
 }

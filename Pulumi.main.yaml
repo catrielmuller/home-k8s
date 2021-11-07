@@ -1,0 +1,10 @@
+encryptionsalt: v1:N1QyJuqN4nw=:v1:GmHG9SaYEU3F55oK:q4GceLQjN9Cz4o+6aca/855y2MwaMA==
+config:
+  home-k8s:keycloak-client-secret:
+    secure: v1:Q3RtBG7q98Lvusul:L3L4T6ZEmuxVdFEq6fO5+ormIoUTvM9hYbDW9eFhY/GLLWehdwPI9DConAV4XpVq
+  home-k8s:keycloak-password:
+    secure: v1:zEqWyRN3rp2M5l1I:u+nVdwEijb0lzJFhe52OzpJERpVcsdq5sfUuatH8KQXE6NQcgRDmTknMeX0rtEPR
+  home-k8s:oauth2-proxy-cookie-secret:
+    secure: v1:OcifBUTxbxGOwLlB:vwof82zfo4mYF3cQ/6w/M7+Xfp9kPP7pVTUaXmcFy88f2kx6y4oOcnAVg78LcM9oxOqRTMSDbHkuoPvT
+  home-k8s:postgresql-password:
+    secure: v1:nhVoFuj3U5dfl8rA:ixy82WNTubFbjOViQEYbj7/TAczR1F4b05dkKmxADX8FndMwjU8YtkNt0OmCNzov
