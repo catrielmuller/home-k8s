@@ -1,7 +1,7 @@
 {
   "name": "home-k8s",
   "scripts": {
-    "lint": "eslint src/**/**/*.ts"
+    "lint": "eslint src --ext .ts"
   },
   "devDependencies": {
     "@types/node": "^10.0.0"
