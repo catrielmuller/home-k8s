@@ -16,12 +16,13 @@ export const oAuth2ProxyValues = {
     'redirect-url': `https://${Config.oauth2Proxy.host}/oauth2/callback`,
     'cookie-domain': `.${Config.domains.apps},.${Config.domains.root}`,
     'whitelist-domain': `.${Config.domains.apps},.${Config.domains.root}`,
+    'set-authorization-header': 'true',
   },
   ingress: {
     enabled: true,
     annotations: {
       'kubernetes.io/ingress.class': 'nginx',
-      'nginx.ingress.kubernetes.io/proxy-buffer-size': '8k',
+      'nginx.ingress.kubernetes.io/proxy-buffer-size': '64k',
       'cert-manager.io/cluster-issuer': Config.certManager.issuer,
     },
     hosts: [Config.oauth2Proxy.host],

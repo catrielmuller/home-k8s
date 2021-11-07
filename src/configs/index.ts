@@ -3,6 +3,9 @@ const PulumiConfig = new pulumi.Config();
 
 const name = 'home';
 const namespace = 'home-system';
+const kubernetes = {
+  token: PulumiConfig.require('kubernetes-token'),
+};
 const domains = {
   root: 'home.kei.ninja',
   apps: 'apps.home.kei.ninja',
@@ -47,12 +50,13 @@ const keycloak = {
   title: 'Home',
   clientId: 'home',
   clientSecret: PulumiConfig.require('keycloak-client-secret'),
-  roles: ['home', 'admin'],
+  roles: ['admin', 'home'],
 };
 
 export const Config = {
   name,
   namespace,
+  kubernetes,
   domains,
   metalLB,
   nfs,

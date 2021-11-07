@@ -16,7 +16,6 @@ const metalLB = metalLBModule({ namespace });
 const nfsSubDirExternalProvisioner = nfsSubDirExternalProvisionerModule({ namespace });
 const ingressNginx = ingressNginxModule({ namespace });
 const certManager = certManagerModule({ namespace });
-const dashboard = dashboardModule({ namespace });
 const Postgresql = postgresqlModule({ namespace });
 const keycloak = keycloakModule({
   namespace,
@@ -26,3 +25,4 @@ const OAuth2Proxy = oAuth2ProxyModule({
   namespace,
   client: keycloak.keycloak.client,
 });
+const dashboard = dashboardModule({ namespace });
