@@ -9,7 +9,7 @@ export const dashboardModule = (args: DashboardModuleArgs) => {
   return new k8s.helm.v3.Chart('system-dashboard', {
     namespace: namespace.metadata.name,
     chart: 'kubernetes-dashboard',
-    version: '5.0.4',
+    version: '5.0.5',
     fetchOpts: {
       repo: 'https://kubernetes.github.io/dashboard/',
     },
