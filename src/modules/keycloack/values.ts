@@ -3,7 +3,7 @@ import { Config } from '../../configs';
 export const keycloakValues = {
   image: {
     repository: 'docker.io/sleighzy/keycloak',
-    tag: '15.0.2-arm64',
+    tag: '16.1.0-arm64',
   },
   ingress: {
     enabled: true,
