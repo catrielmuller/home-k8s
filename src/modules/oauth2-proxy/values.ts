@@ -2,7 +2,7 @@ import { Config } from '../../configs';
 
 export const oAuth2ProxyValues = {
   image: {
-    tag: 'v7.2.0-arm64',
+    tag: 'v7.2.1-arm64',
   },
   config: {
     clientID: Config.keycloak.clientId,

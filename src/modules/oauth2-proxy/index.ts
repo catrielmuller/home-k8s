@@ -13,7 +13,7 @@ export const oAuth2ProxyModule = (args: OAuth2ProxyModuleArgs) => {
     {
       namespace: namespace.metadata.name,
       chart: 'oauth2-proxy',
-      version: '5.0.2',
+      version: '5.0.6',
       fetchOpts: {
         repo: 'https://oauth2-proxy.github.io/manifests',
       },
