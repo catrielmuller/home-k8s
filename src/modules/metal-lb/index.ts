@@ -9,7 +9,7 @@ export const metalLBModule = (args: MetalLBModuleArgs) => {
   return new k8s.helm.v3.Chart('system-metallb', {
     namespace: namespace.metadata.name,
     chart: 'metallb',
-    version: '0.10.2',
+    version: '0.11.0',
     fetchOpts: {
       repo: 'https://metallb.github.io/metallb',
     },
