@@ -9,6 +9,7 @@ import { dashboardModule } from './modules/dashboard';
 import { postgresqlModule } from './modules/postgresql';
 import { keycloakModule } from './modules/keycloack';
 import { oAuth2ProxyModule } from './modules/oauth2-proxy';
+import { wgAccessServerModule } from './modules/wg-access-server';
 
 // TODO: Export variables to pulumi
 const namespace = namespaceModule();
@@ -26,3 +27,4 @@ const OAuth2Proxy = oAuth2ProxyModule({
   client: keycloak.keycloak.client,
 });
 const dashboard = dashboardModule({ namespace });
+const wgAccessServer = wgAccessServerModule({ namespace });

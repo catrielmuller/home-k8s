@@ -4,21 +4,21 @@
     "lint": "eslint src --ext .ts"
   },
   "devDependencies": {
-    "@types/node": "^10.0.0"
+    "@types/node": "^17.0.8"
   },
   "dependencies": {
-    "@pulumi/keycloak": "^4.5.0",
-    "@pulumi/kubernetes": "^3.0.0",
-    "@pulumi/kubernetesx": "^0.1.5",
-    "@pulumi/postgresql": "^3.2.0",
-    "@pulumi/pulumi": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "@pulumi/keycloak": "^4.7.0",
+    "@pulumi/kubernetes": "^3.13.0",
+    "@pulumi/kubernetesx": "^0.1.6",
+    "@pulumi/postgresql": "^3.3.0",
+    "@pulumi/pulumi": "^3.21.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1"
   }
 }

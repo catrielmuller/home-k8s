@@ -7,10 +7,12 @@ type SetupProviderArgs = {
 };
 export const setupProvider = (args: SetupProviderArgs) => {
   const { chart } = args;
+
   return new keycloak.Provider(
     'system-keycloak-provider',
     {
       clientId: 'admin-cli',
+      clientSecret: Config.keycloak.clientSecret,
       url: `https://${Config.keycloak.host}`,
       username: Config.keycloak.username,
       password: Config.keycloak.password,

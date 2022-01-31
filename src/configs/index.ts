@@ -38,19 +38,29 @@ const postgresql = {
   ip: '10.0.11.2',
 };
 const oauth2Proxy = {
+  ip: '10.0.11.3',
   host: 'auth.home.kei.ninja',
+  internalHost: 'system-oauth2-proxy.home-system',
   cookieSecret: PulumiConfig.require('oauth2-proxy-cookie-secret'),
 };
 const keycloak = {
   host: 'keys.home.kei.ninja',
   username: 'admin',
-  password: PulumiConfig.require('keycloak-password'),
+  password: PulumiConfig.require('keycloak-admin-password'),
   theme: 'keycloak',
   name: 'home',
   title: 'Home',
   clientId: 'home',
   clientSecret: PulumiConfig.require('keycloak-client-secret'),
   roles: ['admin', 'home'],
+};
+const wgAccessServer = {
+  adminUsername: 'admin',
+  adminPassword: PulumiConfig.require('wg-access-server-password'),
+  adminIp: '10.0.11.4',
+  privateKey: PulumiConfig.require('wg-access-server-private-key'),
+  wireguardIP: '10.0.11.5',
+  host: 'vpn.home.kei.ninja',
 };
 
 export const Config = {
@@ -66,4 +76,5 @@ export const Config = {
   postgresql,
   oauth2Proxy,
   keycloak,
+  wgAccessServer,
 };

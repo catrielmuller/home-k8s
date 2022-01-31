@@ -4,6 +4,10 @@ export const oAuth2ProxyValues = {
   image: {
     tag: 'v7.2.1-arm64',
   },
+  service: {
+    type: 'LoadBalancer',
+    loadBalancerIP: Config.oauth2Proxy.ip,
+  },
   config: {
     clientID: Config.keycloak.clientId,
     clientSecret: Config.keycloak.clientSecret,

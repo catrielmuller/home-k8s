@@ -6,7 +6,7 @@ export const dashboardValues = {
     enabled: true,
     annotations: {
       'kubernetes.io/ingress.class': 'nginx',
-      'nginx.ingress.kubernetes.io/auth-url': `https://${Config.oauth2Proxy.host}/oauth2/auth`,
+      'nginx.ingress.kubernetes.io/auth-url': `http://${Config.oauth2Proxy.ip}:80/oauth2/auth`,
       'nginx.ingress.kubernetes.io/auth-signin': `https://${Config.oauth2Proxy.host}/oauth2/start?rd=https://$host$escaped_request_uri`,
       'cert-manager.io/cluster-issuer': Config.certManager.issuer,
       'nginx.ingress.kubernetes.io/configuration-snippet': `
