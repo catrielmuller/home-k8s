@@ -11,7 +11,7 @@ export const nfsSubDirExternalProvisionerModule = (
   return new k8s.helm.v3.Chart('system-nfs', {
     namespace: namespace.metadata.name,
     chart: 'nfs-subdir-external-provisioner',
-    version: '4.0.14',
+    version: '4.0.16',
     fetchOpts: {
       repo: 'https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/',
     },

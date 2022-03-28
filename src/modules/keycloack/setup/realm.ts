@@ -25,6 +25,7 @@ export const setupRealm = (args: SetupRealmArgs) => {
       rememberMe: true,
       accessCodeLifespan: '8h',
       sslRequired: 'external',
+      // TODO: Fix reverse dependencies conflict
       browserFlow: 'auth-flow',
     },
     {

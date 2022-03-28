@@ -5,5 +5,14 @@ export const ingressNginxValues = {
     service: {
       loadBalancerIP: Config.ingressNginx.ip,
     },
+    metrics: {
+      enabled: true,
+      service: {
+        annotations: {
+          'prometheus.io/scrape': 'true',
+          'prometheus.io/port': '10254',
+        },
+      },
+    },
   },
 };

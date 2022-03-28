@@ -7,8 +7,8 @@ const kubernetes = {
   token: PulumiConfig.require('kubernetes-token'),
 };
 const domains = {
-  root: 'home.kei.ninja',
-  apps: 'apps.home.kei.ninja',
+  root: 'home.kei.ar',
+  apps: 'apps.home.kei.ar',
 };
 const metalLB = {
   protocol: 'layer2',
@@ -29,7 +29,7 @@ const certManager = {
   email: 'catrielmuller@gmail.com',
 };
 const dashboard = {
-  host: 'dashboard.home.kei.ninja',
+  host: 'dashboard.home.kei.ar',
 };
 const postgresql = {
   username: 'postgres',
@@ -39,12 +39,12 @@ const postgresql = {
 };
 const oauth2Proxy = {
   ip: '10.0.11.3',
-  host: 'auth.home.kei.ninja',
+  host: 'auth.home.kei.ar',
   internalHost: 'system-oauth2-proxy.home-system',
   cookieSecret: PulumiConfig.require('oauth2-proxy-cookie-secret'),
 };
 const keycloak = {
-  host: 'keys.home.kei.ninja',
+  host: 'keys.home.kei.ar',
   username: 'admin',
   password: PulumiConfig.require('keycloak-admin-password'),
   theme: 'keycloak',
@@ -60,7 +60,22 @@ const wgAccessServer = {
   adminIp: '10.0.11.4',
   privateKey: PulumiConfig.require('wg-access-server-private-key'),
   wireguardIP: '10.0.11.5',
-  host: 'vpn.home.kei.ninja',
+  host: 'vpn.home.kei.ar',
+};
+const prometheus = {
+  host: 'prometheus.home.kei.ar',
+};
+const alertmanager = {
+  host: 'alertmanager.home.kei.ar',
+};
+const grafana = {
+  host: 'grafana.home.kei.ar',
+  adminUsername: 'admin',
+  adminPassword: PulumiConfig.require('grafana-password'),
+};
+const flame = {
+  host: 'home.kei.ar',
+  adminPassword: PulumiConfig.require('flame-password'),
 };
 
 export const Config = {
@@ -77,4 +92,8 @@ export const Config = {
   oauth2Proxy,
   keycloak,
   wgAccessServer,
+  prometheus,
+  alertmanager,
+  grafana,
+  flame,
 };
