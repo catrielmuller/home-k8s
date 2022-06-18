@@ -2,7 +2,6 @@ import * as pulumi from '@pulumi/pulumi';
 const PulumiConfig = new pulumi.Config();
 
 const name = 'home';
-const namespace = 'home-system';
 const kubernetes = {
   token: PulumiConfig.require('kubernetes-token'),
 };
@@ -36,6 +35,7 @@ const postgresql = {
   database: 'postgres',
   password: PulumiConfig.require('postgresql-password'),
   ip: '10.0.11.2',
+  host: 'home-postgresql.home-postgresql',
 };
 const oauth2Proxy = {
   ip: '10.0.11.3',
@@ -80,7 +80,6 @@ const flame = {
 
 export const Config = {
   name,
-  namespace,
   kubernetes,
   domains,
   metalLB,

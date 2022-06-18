@@ -38,7 +38,7 @@ export const prometheusValues = {
       tls: [
         {
           hosts: [Config.prometheus.host],
-          secretName: `alertmanager-tls`,
+          secretName: `prometheus-tls`,
         },
       ],
     },

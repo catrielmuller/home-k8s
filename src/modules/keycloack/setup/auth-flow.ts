@@ -1,4 +1,5 @@
 import * as keycloak from '@pulumi/keycloak';
+import { Config } from '../../../configs';
 
 type SetupRealmArgs = {
   provider: keycloak.Provider;
@@ -8,7 +9,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   const { provider, realm } = args;
 
   const authFlow = new keycloak.authentication.Flow(
-    'system-keycloak-auth-flow',
+    `${Config.name}-keycloak-auth-flow`,
     {
       realmId: realm.id,
       alias: 'auth-flow',
@@ -20,7 +21,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const cookieExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-cookie',
+    `${Config.name}-keycloak-auth-flow-cookie`,
     {
       realmId: realm.id,
       parentFlowAlias: authFlow.alias,
@@ -34,7 +35,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const identityExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-identity',
+    `${Config.name}-keycloak-auth-flow-identity`,
     {
       realmId: realm.id,
       parentFlowAlias: authFlow.alias,
@@ -48,7 +49,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const formFlow = new keycloak.authentication.Subflow(
-    'system-keycloak-auth-flow-form',
+    `${Config.name}-keycloak-auth-flow-form`,
     {
       realmId: realm.id,
       alias: 'auth-form',
@@ -62,7 +63,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const usernameExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-username',
+    `${Config.name}-keycloak-auth-flow-username`,
     {
       realmId: realm.id,
       parentFlowAlias: formFlow.alias,
@@ -76,7 +77,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const passwordFormFlow = new keycloak.authentication.Subflow(
-    'system-keycloak-auth-flow-password-form',
+    `${Config.name}-keycloak-auth-flow-password-form`,
     {
       realmId: realm.id,
       alias: 'auth-password',
@@ -90,7 +91,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const passwordlessExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-passwordless',
+    `${Config.name}-keycloak-auth-flow-passwordless`,
     {
       realmId: realm.id,
       parentFlowAlias: passwordFormFlow.alias,
@@ -104,7 +105,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const passwordExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-password',
+    `${Config.name}-keycloak-auth-flow-password`,
     {
       realmId: realm.id,
       parentFlowAlias: passwordFormFlow.alias,
@@ -118,7 +119,7 @@ export const setupAuthFlow = (args: SetupRealmArgs) => {
   );
 
   const otpExecution = new keycloak.authentication.Execution(
-    'system-keycloak-auth-flow-otp',
+    `${Config.name}-keycloak-auth-flow-otp`,
     {
       realmId: realm.id,
       parentFlowAlias: passwordFormFlow.alias,

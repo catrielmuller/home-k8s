@@ -1,14 +1,15 @@
 import * as k8s from '@pulumi/kubernetes';
+import { Config } from '../../configs';
 import { nfsSubDirExternalProvisionerValues } from './values';
 
-type NfsSubDirExternalProvisionerModuleArgs = {
-  namespace: k8s.core.v1.Namespace;
-};
-export const nfsSubDirExternalProvisionerModule = (
-  args: NfsSubDirExternalProvisionerModuleArgs
-) => {
-  const { namespace } = args;
-  return new k8s.helm.v3.Chart('system-nfs', {
+export const nfsSubDirExternalProvisionerModule = () => {
+  const namespace = new k8s.core.v1.Namespace(`${Config.name}-nfs-namespace`, {
+    metadata: {
+      name: `${Config.name}-nfs`,
+    },
+  });
+
+  return new k8s.helm.v3.Chart(`${Config.name}-nfs`, {
     namespace: namespace.metadata.name,
     chart: 'nfs-subdir-external-provisioner',
     version: '4.0.16',

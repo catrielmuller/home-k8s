@@ -1,21 +1,23 @@
 import * as k8s from '@pulumi/kubernetes';
+import { Config } from '../../configs';
 import { metricsServerValues } from './values';
 
-type MetricsServerModuleArgs = {
-  namespace: k8s.core.v1.Namespace;
-};
-export const metricsServerModule = (args: MetricsServerModuleArgs) => {
-  const { namespace } = args;
+export const metricsServerModule = () => {
+  const namespace = new k8s.core.v1.Namespace(`${Config.name}-metrics-server-namespace`, {
+    metadata: {
+      name: `${Config.name}-metrics-server`,
+    },
+  });
 
   // https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
   const kubeletServingCertApprover = new k8s.yaml.ConfigFile(
-    'system-kubelet-serving-cert-approver',
+    `${Config.name}-kubelet-serving-cert-approver`,
     {
       file: 'modules/metrics-server/kubelet-serving-cert-approver.yaml',
     }
   );
 
-  const helm = new k8s.helm.v3.Chart('system-metrics-server', {
+  const helm = new k8s.helm.v3.Chart(`${Config.name}-metrics-server`, {
     namespace: namespace.metadata.name,
     chart: 'metrics-server',
     version: '3.8.2',

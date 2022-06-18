@@ -9,7 +9,7 @@ export const setupRoles = (args: SetupRolesArgs) => {
   const { provider, realm } = args;
   return Config.keycloak.roles.map((role) => {
     return new keycloak.Role(
-      `system-keycloak-role-${role}`,
+      `${Config.name}-keycloak-role-${role}`,
       {
         realmId: realm.id,
         name: role,

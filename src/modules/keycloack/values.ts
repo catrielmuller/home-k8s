@@ -26,7 +26,7 @@ export const keycloakValues = {
     tls: [
       {
         hosts: [Config.keycloak.host],
-        secretName: 'system-keycloak-tls',
+        secretName: `${Config.name}-keycloak-tls`,
       },
     ],
   },
@@ -52,7 +52,7 @@ export const keycloakValues = {
     },
     {
       name: "DB_DATABASE",
-      value: "system-keycloak"
+      value: "${Config.name}-keycloak"
     },
     {
       name: "DB_USER",

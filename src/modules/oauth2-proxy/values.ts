@@ -32,7 +32,7 @@ export const oAuth2ProxyValues = {
     hosts: [Config.oauth2Proxy.host],
     tls: [
       {
-        secretName: 'system-oauth2-proxy-tls',
+        secretName: `${Config.name}-oauth2-proxy-tls`,
         hosts: [Config.oauth2Proxy.host],
       },
     ],

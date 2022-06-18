@@ -10,7 +10,7 @@ export const certManagerIssuers = (args: CertManagerIssuersArgs) => {
   const { namespace, chart } = args;
 
   const staging = new certmanager.certmanager.v1.ClusterIssuer(
-    'system-cert-manager-staging',
+    `${Config.name}-cert-manager-staging`,
     {
       metadata: {
         name: Config.certManager.staging,
@@ -41,7 +41,7 @@ export const certManagerIssuers = (args: CertManagerIssuersArgs) => {
   );
 
   const prod = new certmanager.certmanager.v1.ClusterIssuer(
-    'system-cert-manager-prod',
+    `${Config.name}-cert-manager-prod`,
     {
       metadata: {
         name: Config.certManager.issuer,

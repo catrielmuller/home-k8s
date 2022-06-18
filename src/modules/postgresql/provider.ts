@@ -8,7 +8,7 @@ type postgresqlProviderArgs = {
 export const postgresqlProvider = (args: postgresqlProviderArgs) => {
   const { chart } = args;
   return new postgresql.Provider(
-    'system-postgresql-provider',
+    `${Config.name}-postgresql-provider`,
     {
       host: Config.postgresql.ip,
       database: Config.postgresql.database,

@@ -8,7 +8,7 @@ type SetupClientArgs = {
 export const setupClient = (args: SetupClientArgs) => {
   const { provider, realm } = args;
   return new keycloak.openid.Client(
-    'system-keycloak-client',
+    `${Config.name}-keycloak-client`,
     {
       realmId: realm.id,
       name: Config.keycloak.name,

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { namespaceModule } from './modules/namespace';
 import { metalLBModule } from './modules/metal-lb';
 import { nfsSubDirExternalProvisionerModule } from './modules/nfs-sub-dir-external-provisioner';
 import { ingressNginxModule } from './modules/ingress-nginx';
@@ -14,25 +13,24 @@ import { prometheusModule } from './modules/prometheus';
 import { metricsServerModule } from './modules/metrics-server';
 import { grafanaModule } from './modules/grafana';
 import { flameModule } from './modules/flame';
+import { postgresExporterModule } from './modules/postgres-exporter';
 
 // TODO: Export variables to pulumi
-const namespace = namespaceModule();
-const metalLB = metalLBModule({ namespace });
-const nfsSubDirExternalProvisioner = nfsSubDirExternalProvisionerModule({ namespace });
-const ingressNginx = ingressNginxModule({ namespace });
-const certManager = certManagerModule({ namespace });
-const Postgresql = postgresqlModule({ namespace });
+const metalLB = metalLBModule();
+const nfsSubDirExternalProvisioner = nfsSubDirExternalProvisionerModule();
+const ingressNginx = ingressNginxModule();
+const certManager = certManagerModule();
+const postgresql = postgresqlModule();
 const keycloak = keycloakModule({
-  namespace,
-  databaseProvider: Postgresql.provider,
+  databaseProvider: postgresql.provider,
 });
 const OAuth2Proxy = oAuth2ProxyModule({
-  namespace,
   client: keycloak.keycloak.client,
 });
-const dashboard = dashboardModule({ namespace });
-const wgAccessServer = wgAccessServerModule({ namespace });
-const prometheus = prometheusModule({ namespace });
-const metricsServer = metricsServerModule({ namespace });
-const grafana = grafanaModule({ namespace });
-const flame = flameModule({ namespace });
+const dashboard = dashboardModule();
+const wgAccessServer = wgAccessServerModule();
+const metricsServer = metricsServerModule();
+const prometheus = prometheusModule();
+const postgresExporter = postgresExporterModule();
+const grafana = grafanaModule();
+const flame = flameModule();

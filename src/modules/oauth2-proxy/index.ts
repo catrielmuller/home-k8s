@@ -1,15 +1,22 @@
 import * as k8s from '@pulumi/kubernetes';
 import * as keycloak from '@pulumi/keycloak';
 import { oAuth2ProxyValues } from './values';
+import { Config } from '../../configs';
 
 type OAuth2ProxyModuleArgs = {
-  namespace: k8s.core.v1.Namespace;
   client: keycloak.openid.Client;
 };
 export const oAuth2ProxyModule = (args: OAuth2ProxyModuleArgs) => {
-  const { namespace, client } = args;
+  const { client } = args;
+
+  const namespace = new k8s.core.v1.Namespace(`${Config.name}-oauth2-proxy-namespace`, {
+    metadata: {
+      name: `${Config.name}-oauth2-proxy`,
+    },
+  });
+
   return new k8s.helm.v3.Chart(
-    'system-oauth2-proxy',
+    `${Config.name}-oauth2-proxy`,
     {
       namespace: namespace.metadata.name,
       chart: 'oauth2-proxy',

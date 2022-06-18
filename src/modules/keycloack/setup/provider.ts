@@ -9,7 +9,7 @@ export const setupProvider = (args: SetupProviderArgs) => {
   const { chart } = args;
 
   return new keycloak.Provider(
-    'system-keycloak-provider',
+    `${Config.name}-keycloak-provider`,
     {
       clientId: 'admin-cli',
       clientSecret: Config.keycloak.clientSecret,

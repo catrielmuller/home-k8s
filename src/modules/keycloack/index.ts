@@ -3,17 +3,23 @@ import * as postgresql from '@pulumi/postgresql';
 import { keycloakValues } from './values';
 import { keycloakDatabase } from './database';
 import { keycloakSetup } from './setup';
+import { Config } from '../../configs';
 
 type KeycloakModuleArgs = {
-  namespace: k8s.core.v1.Namespace;
   databaseProvider: postgresql.Provider;
 };
 export const keycloakModule = (args: KeycloakModuleArgs) => {
-  const { namespace, databaseProvider } = args;
+  const { databaseProvider } = args;
+
+  const namespace = new k8s.core.v1.Namespace(`${Config.name}-keycloak-namespace`, {
+    metadata: {
+      name: `${Config.name}-keycloak`,
+    },
+  });
 
   const database = keycloakDatabase({ provider: databaseProvider });
   const chart = new k8s.helm.v3.Chart(
-    'system-keycloak',
+    `${Config.name}-keycloak`,
     {
       namespace: namespace.metadata.name,
       chart: 'keycloak',
