@@ -14,6 +14,8 @@ import { metricsServerModule } from './modules/metrics-server';
 import { grafanaModule } from './modules/grafana';
 import { flameModule } from './modules/flame';
 import { postgresExporterModule } from './modules/postgres-exporter';
+import { espModule } from './modules/esp';
+import { assistantModule } from './modules/assistant';
 
 // TODO: Export variables to pulumi
 const metalLB = metalLBModule();
@@ -34,3 +36,7 @@ const prometheus = prometheusModule();
 const postgresExporter = postgresExporterModule();
 const grafana = grafanaModule();
 const flame = flameModule();
+const esp = espModule();
+const assistant = assistantModule({
+  databaseProvider: postgresql.provider,
+});

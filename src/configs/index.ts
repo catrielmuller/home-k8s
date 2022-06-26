@@ -77,6 +77,14 @@ const flame = {
   host: 'home.kei.ar',
   adminPassword: PulumiConfig.require('flame-password'),
 };
+const esp = {
+  ip: '10.0.11.6',
+  host: 'esp.home.kei.ar',
+};
+const assistant = {
+  ip: '10.0.11.7',
+  host: 'assistant.home.kei.ar',
+};
 
 export const Config = {
   name,
@@ -95,4 +103,6 @@ export const Config = {
   alertmanager,
   grafana,
   flame,
+  esp,
+  assistant,
 };
