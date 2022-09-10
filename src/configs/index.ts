@@ -5,6 +5,11 @@ const name = 'home';
 const kubernetes = {
   token: PulumiConfig.require('kubernetes-token'),
 };
+const registry = {
+  dockerhub: {
+    token: PulumiConfig.require('dockerhub-token'),
+  },
+};
 const domains = {
   root: 'home.kei.ar',
   apps: 'apps.home.kei.ar',
@@ -85,10 +90,19 @@ const assistant = {
   ip: '10.0.11.7',
   host: 'assistant.home.kei.ar',
 };
+const cal = {
+  host: `cal.home.kei.ar`,
+  email: 'cal@kei.ar',
+  nextAuthSecret: PulumiConfig.require('cal-next-auth-secret'),
+  encryptionKey: PulumiConfig.require('cal-encryption-key'),
+  googleApiCredentials: PulumiConfig.require('cal-google-api-credentials'),
+  sendgridApiKey: PulumiConfig.require('cal-sendgrid-api-key'),
+};
 
 export const Config = {
   name,
   kubernetes,
+  registry,
   domains,
   metalLB,
   nfs,
@@ -105,4 +119,5 @@ export const Config = {
   flame,
   esp,
   assistant,
+  cal,
 };

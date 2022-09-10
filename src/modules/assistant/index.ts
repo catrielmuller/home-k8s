@@ -31,9 +31,9 @@ export const assistantModule = (args: AssistantModuleArgs) => {
   const chart = new k8s.helm.v3.Chart(`${Config.name}-assistant`, {
     namespace: namespace.metadata.name,
     chart: 'home-assistant',
-    version: '13.2.0',
+    version: '13.6.0',
     fetchOpts: {
-      repo: 'https://k8s-at-home.com/charts/',
+      repo: 'https://helm.samipsolutions.fi/',
     },
     values: assistantValues,
   });

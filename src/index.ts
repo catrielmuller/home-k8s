@@ -16,6 +16,7 @@ import { flameModule } from './modules/flame';
 import { postgresExporterModule } from './modules/postgres-exporter';
 import { espModule } from './modules/esp';
 import { assistantModule } from './modules/assistant';
+import { calModule } from './modules/cal';
 
 // TODO: Export variables to pulumi
 const metalLB = metalLBModule();
@@ -38,5 +39,8 @@ const grafana = grafanaModule();
 const flame = flameModule();
 const esp = espModule();
 const assistant = assistantModule({
+  databaseProvider: postgresql.provider,
+});
+const cal = calModule({
   databaseProvider: postgresql.provider,
 });

@@ -1,4 +1,14 @@
 config:
+  home-k8s:cal-encryption-key:
+    secure: AAABAPRKx0P0cXkkl0wOGt9dcGap6RvV9cTsyxlkfqWtYsEPyPi0XK/dHw2R7dJ/+vikJzKuIRsyic8fSa9GIHvv0SYZ/azYqSh+Rw==
+  home-k8s:cal-google-api-credentials:
+    secure: AAABANfJMsnZqZhnDyui6HMAEX1lXsNmCMOhIH2LPBsaPin4SQ2ES7uP7xqqnfI1p5XC5OIOubERmV2dHz0zsNycF4Za5upU2FzkoTJZE0Mwp6mtJUbHrhqRFSUfBq6LFnUxWAeyJIslGaq3tpaMs/1hlXXObLAioqbMsTRKMSjvTH6f83yohJxBWOFqz5dpdMiNl1Ocx4rhO/f1Ur4UsLZKeJgSbG+hOxj1QzgOavop9YxfklAChl8y6shZQc+n5qGiXkS+7QniZbxC/rkEPOzonXnkc8gLJScwAL7Rgk5uim5bvDsv4ovz0bjAoo3xY3TQ5yXwyw1R+sx8SOwd0D6K+M2eypmFDw4Y6Jn8tMBeVwnLL8OeB6dJvuRBN22BgbmO5XpQH1Eg7YRLBgCtkQBcu2eydaX85Pb3hCY4OVY7voAr18Co5kxtghTjwv3UewF1U+ThxzHFpRZgP84kSyvEwxvZX69Qq2jDhlzpHYxXjU5J5Ee48QLCQGOB7CMGY2nqkRm18eLALJ5C3PUhi1u0Cl/gGjv9kRXuuoTNmVlJ6zdfObLjqKQaPS6FGKWroJr+RumyfBA69MH1punL+luZredY09/XKsvvQuQREh24h0AzZw==
+  home-k8s:cal-next-auth-secret:
+    secure: AAABAAitYugZtJmJIJfSbmhhOdlelruvsui1uNZVG+EwZcv1K9OtzCDHFOpcOBnY7mozh/poLUY8awhxzvnlD0Kuge/F42DXYGRRnw==
+  home-k8s:cal-sendgrid-api-key:
+    secure: AAABANXL0BMhFW8c0OKP12e7fcKXUa6t4rFAprS/J5VnLnuQyxplFCGome1oR7gUHMY9CuWtIWLuyvKw9ck2R0zruHMjfm3K8qoeQ+8ZfdcTv5sW0dnquj1l4HC44unSkQy213c=
+  home-k8s:dockerhub-token:
+    secure: AAABAMy1XX0TjUc0HrbfcFmtVFllcVWetC3stWpAi5/TPIMHtRyTtGI5SuAhtzr4klMpnI/wOtGH/vkDoami+BJRQjn5PR4RA5OYB5fKuYxHd08fuBnRnyHpOfQImgjjuMEBgw==
   home-k8s:flame-password:
     secure: AAABACP7H1CnkyGn8lAjzRm830CXdI12IcL6naDnTlnwc22cEVylG2fQSDdJLCXiuLCcZtDh3VXwNzImZ4cnaA==
   home-k8s:grafana-password:

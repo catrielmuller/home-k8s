@@ -12,9 +12,9 @@ export const wgAccessServerModule = () => {
   return new k8s.helm.v3.Chart(`${Config.name}-wg-access-server`, {
     namespace: namespace.metadata.name,
     chart: 'wg-access-server',
-    version: '0.5.1',
+    version: '0.9.6',
     fetchOpts: {
-      repo: 'https://freie-netze.org/wg-access-server',
+      repo: 'https://catrielmuller.github.io/wg-access-server-chart/',
     },
     values: wgAccessServerValues,
   });
