@@ -88,7 +88,7 @@ export const calModule = (args: CalModuleArgs) => {
           containers: [
             {
               name: `${Config.name}-cal`,
-              image: 'catrielmuller/calcom-docker:40969ab5456a01e297490e5d277c38e87a5c7284',
+              image: 'catrielmuller/calcom-docker:1276ed54be2508dc55143a8facc2ab04b5106f96',
               ports: [
                 {
                   containerPort: 3000,

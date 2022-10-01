@@ -32,7 +32,7 @@ export const assistantValues = {
     config: {
       enabled: true,
       storageClass: 'nfs-client',
-      size: '40Gi',
+      size: '100Gi',
       accessModes: ['ReadWriteOnce'],
     },
   },
