@@ -2,6 +2,12 @@
 
 HomeLab Kubernetes Pulumi
 
+## Untaint Master Nodes
+
+```bash
+kubectl taint node --all node-role.kubernetes.io/master:NoSchedule-
+```
+
 ## Create Kubernetes Token
 
 ```bash

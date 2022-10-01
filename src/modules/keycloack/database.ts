@@ -8,10 +8,10 @@ type KeycloakDatabaseArgs = {
 export const keycloakDatabase = (args: KeycloakDatabaseArgs) => {
   const { provider } = args;
   return new postgresql.Database(
-    `system-keycloak-db`,
+    `${Config.name}-keycloak-db`,
     {
       allowConnections: true,
-      name: 'system-keycloak',
+      name: `${Config.name}-keycloak`,
       owner: Config.postgresql.username,
     },
     {

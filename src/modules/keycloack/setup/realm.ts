@@ -7,7 +7,7 @@ type SetupRealmArgs = {
 export const setupRealm = (args: SetupRealmArgs) => {
   const { provider } = args;
   return new keycloak.Realm(
-    'system-keycloak-realm',
+    `${Config.name}-keycloak-realm`,
     {
       realm: Config.keycloak.name,
       displayName: Config.keycloak.title,
@@ -25,6 +25,7 @@ export const setupRealm = (args: SetupRealmArgs) => {
       rememberMe: true,
       accessCodeLifespan: '8h',
       sslRequired: 'external',
+      // TODO: Fix reverse dependencies conflict
       browserFlow: 'auth-flow',
     },
     {

@@ -16,7 +16,7 @@ export const dashboardValues = {
     hosts: [Config.dashboard.host],
     tls: [
       {
-        secretName: 'system-dashboard-tls',
+        secretName: `${Config.name}-dashboard-tls`,
         hosts: [Config.dashboard.host],
       },
     ],
