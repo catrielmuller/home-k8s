@@ -12,7 +12,7 @@ export const dashboardModule = () => {
   return new k8s.helm.v3.Chart(`${Config.name}-dashboard`, {
     namespace: namespace.metadata.name,
     chart: 'kubernetes-dashboard',
-    version: '5.0.5',
+    version: '5.11.0',
     fetchOpts: {
       repo: 'https://kubernetes.github.io/dashboard/',
     },
