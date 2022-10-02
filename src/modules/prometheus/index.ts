@@ -12,7 +12,7 @@ export const prometheusModule = () => {
   return new k8s.helm.v3.Chart(`${Config.name}-prometheus`, {
     namespace: namespace.metadata.name,
     chart: 'prometheus',
-    version: '15.6.0',
+    version: '15.14.0',
     fetchOpts: {
       repo: 'https://prometheus-community.github.io/helm-charts',
     },
