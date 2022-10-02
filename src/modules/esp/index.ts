@@ -72,7 +72,7 @@ export const espModule = () => {
           containers: [
             {
               name: `${Config.name}-esp`,
-              image: 'esphome/esphome:2022.8.3',
+              image: 'esphome/esphome:2022.9.2',
               ports: [
                 {
                   containerPort: 6052,
