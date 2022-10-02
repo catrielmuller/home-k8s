@@ -12,7 +12,7 @@ export const grafanaModule = () => {
   return new k8s.helm.v3.Chart(`${Config.name}-grafana`, {
     namespace: namespace.metadata.name,
     chart: 'grafana',
-    version: '6.24.1',
+    version: '6.40.0',
     fetchOpts: {
       repo: 'https://grafana.github.io/helm-charts',
     },
